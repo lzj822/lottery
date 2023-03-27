@@ -95,7 +95,7 @@
 			}
 		},
 		onLoad() {
-
+      
 		},
 		methods: {
       codeChange(text) {

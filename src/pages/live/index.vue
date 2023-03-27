@@ -18,7 +18,9 @@
 
 		},
 		methods: {
-
+			initData() {
+				// uni.$u.http.
+			}
 		}
 	}
 </script>

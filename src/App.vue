@@ -14,5 +14,7 @@
 
 <style lang="scss">
 	/*每个页面公共css */
+	@import "colorui/main.css";
+	@import "colorui/icon.css";
 	@import "uview-ui/index.scss"
 </style>
