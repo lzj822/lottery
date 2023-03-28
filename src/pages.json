@@ -50,6 +50,9 @@
       "path": "pages/info/index",
       "style": {
         "navigationBarTitleText": "消息"
+      },
+      "meta": {
+        "login": true
       }
     },
     {

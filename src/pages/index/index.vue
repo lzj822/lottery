@@ -58,6 +58,9 @@
 </template>
 
 <script>
+import { getCurPage } from '../../utils/utils';
+import { checkLogin } from '../../utils/auth'
+
 	export default {
 		data() {
 			return {
@@ -66,7 +69,7 @@
 			}
 		},
 		onLoad() {
-
+			checkLogin({ target: getCurPage().url, type: 'navigateTo' })
 		},
 		methods: {
 

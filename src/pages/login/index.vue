@@ -53,6 +53,7 @@
 
     <view v-if="type === 'input'" style="margin-top: 80rpx;">
       <u--input
+        v-model="inputInfo.mobile"
         placeholder="请输入账号"
         shape="circle"
         type="number"
@@ -63,6 +64,7 @@
       >
       </u--input>
       <u--input
+        v-model="inputInfo.password"
         style="margin-top: 40rpx;"
         placeholder="请输入密码"
         type="number"
@@ -76,7 +78,7 @@
     </view>    
     
     <view style="margin-top: 80rpx;">
-      <button class="login-button">登录</button>
+      <button class="login-button" @tap="loginHandler">登录</button>
     </view>
     <u-row justify="space-between" style="margin-top: 40rpx;">
       <text class="tip-text">快速注册</text>
@@ -91,7 +93,11 @@
 			return {
 				tips: '',
         seconds: 60,
-        type: 'message'
+        type: 'message',
+        inputInfo: {
+          mobile: '',
+          password: '',
+        }
 				// refCode: null
 			}
 		},
@@ -121,6 +127,11 @@
 			},
       contentChangeHandler (type) {
         this.type = type;
+      },
+      loginHandler () {
+        await uni.$u.http.post('https://m.51gee.com/yx-store-api/api/login', {
+          ...this.inputInfo
+        }) 
       }
 		}
 	}

@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from './App'
 import uView from 'uview-ui'
+import interceptorPage from "./utils/interceptorPage";
 
 Vue.config.productionTip = false
 Vue.use(uView)
 
 App.mpType = 'app'
+
+const whiteList = ["/pages/login/index"];
 
 function isPromise(obj) {
   return (
@@ -36,3 +39,6 @@ const app = new Vue({
   ...App
 })
 app.$mount()
+
+interceptorPage()
+
