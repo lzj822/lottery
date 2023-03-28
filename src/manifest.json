@@ -71,5 +71,17 @@
     },
     "mp-qq" : {
         "usingComponents" : true
-    }
+    },
+	"h5": {
+		"devServer": {
+			"proxy": {
+				"/api88": {                    
+					"target":"http://interface.bet007.com",
+					"changeOrigin": true,
+					"secure": false,
+					"pathRewrite":{"^/api88":"/"}
+				}
+			}
+		}
+	}
 }

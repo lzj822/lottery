@@ -1,8 +1,45 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+		<view class="card card-prefecture">
+			<view class="card-title">
+				购彩服务
+			</view>
+			<view class="vve-flex-wrap">
+				<view class="card-prefecture-items" v-for="index of 3" :key="index">
+					<image class="items-image" src="/static/logo.svg"></image>
+					<view class="items-text">
+						购彩记录
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="card card-prefecture">
+			<view class="card-title">
+				专家方案
+			</view>
+			<view class="vve-flex-wrap">
+				<view class="card-prefecture-items" v-for="index of 2" :key="index">
+					<image class="items-image" src="/static/logo.svg"></image>
+					<view class="items-text">
+						我的方案
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="card card-prefecture">
+			<view class="card-title">
+				通用设置
+			</view>
+			<view class="vve-flex-wrap">
+				<view class="card-prefecture-items" v-for="index of 3" :key="index">
+					<image class="items-image" src="/static/logo.svg"></image>
+					<view class="items-text">
+						设置
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -11,7 +48,6 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
 			}
 		},
 		onLoad() {
@@ -24,26 +60,52 @@
 </script>
 
 <style>
+	page {
+		background: #F3F3F3;
+	}
+</style>
+
+<style lang="scss" scoped>
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		padding: 24rpx;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
+	.card {
+		width: auto;
+		padding: 40rpx 54rpx;
+		border-radius: 20rpx;
+		background: #FFFFFF;
+		margin-top: 20rpx;
+
+		.items {
+			text-align: center;
+
+			&-image {
+				width: 80rpx;
+				height: 80rpx;
+				margin-bottom: 5rpx;
+			}
+
+			&-text {
+				font-family: PingFang SC;
+				font-size: 28rpx;
+			}
+		}
 	}
 
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
+	.card-prefecture {
+		padding: 30rpx 34rpx;
+		.card-title {
+			font-family: PingFangSC-Semibold;
+			font-size: 32rpx;
+		}
+		&-items {
+			text-align: center;
+			margin: 40rpx 62rpx 0 0;
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+			&:nth-child(4n) {
+				margin: 40rpx 0;
+			}
+		}
 	}
 </style>

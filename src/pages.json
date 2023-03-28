@@ -10,26 +10,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "static/img/home.png",
-        "selectedIconPath": "static/img/homeHL.png"
+        "iconPath": "static/index.svg",
+        "selectedIconPath": "static/index.svg"
       },
       {
         "pagePath": "pages/live/index",
         "text": "直播开奖",
-        "iconPath": "static/img/user.png",
-        "selectedIconPath": "static/img/userHL.png"
+        "iconPath": "static/live.svg",
+        "selectedIconPath": "static/live.svg"
       },
       {
         "pagePath": "pages/info/index",
         "text": "消息",
-        "iconPath": "static/img/user.png",
-        "selectedIconPath": "static/img/userHL.png"
+        "iconPath": "static/info.svg",
+        "selectedIconPath": "static/info.svg"
       },
       {
         "pagePath": "pages/my/index",
         "text": "我的",
-        "iconPath": "static/img/user.png",
-        "selectedIconPath": "static/img/userHL.png"
+        "iconPath": "static/my.svg",
+        "selectedIconPath": "static/my.svg"
       }
     ]
   },

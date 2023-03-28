@@ -14,12 +14,13 @@
 				title: 'Hello'
 			}
 		},
-		onLoad() {
-
+		async onLoad() {
+			await this.initData();
 		},
 		methods: {
-			initData() {
-				// uni.$u.http.
+			async initData() {
+				const data = await uni.$u.http.get('/api88/football/dt/Schedule.aspx')
+				console.log(data);
 			}
 		}
 	}

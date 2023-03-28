@@ -2,12 +2,12 @@
 	<view class="content">
 		<image class="logo" src="/static/logo.svg"></image>
 		<view class="title-content" style="margin-top: 60rpx;">
-			<text class="title active">快捷登录</text>
+			<text class="title" :class="{ active: type === 'message' }" @tap="contentChangeHandler('message')">快捷登录</text>
       <u-line direction="col" length="24rpx" margin="8rpx 30rpx"></u-line>
-      <text class="title">账号密码登录</text>
+      <text class="title" :class="{ active: type === 'input' }" @tap="contentChangeHandler('input')">账号密码登录</text>
 		</view>
 
-    <view style="margin-top: 80rpx;">
+    <view v-if="type === 'message'" style="margin-top: 80rpx;">
       <u--input
         placeholder="请输入手机号"
         shape="circle"
@@ -51,7 +51,7 @@
       </u--input>
     </view>
 
-    <view style="margin-top: 80rpx;">
+    <view v-if="type === 'input'" style="margin-top: 80rpx;">
       <u--input
         placeholder="请输入账号"
         shape="circle"
@@ -90,7 +90,8 @@
 		data() {
 			return {
 				tips: '',
-        seconds: 60
+        seconds: 60,
+        type: 'message'
 				// refCode: null
 			}
 		},
@@ -117,7 +118,10 @@
 				} else {
 					uni.$u.toast('倒计时结束后再发送');
 				}
-			}
+			},
+      contentChangeHandler (type) {
+        this.type = type;
+      }
 		}
 	}
 </script>
